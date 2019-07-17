@@ -1,0 +1,1 @@
+/usr/bin/gcc   -rdynamic CMakeFiles/myclient.dir/myclient.c.o CMakeFiles/myclient.dir/wiser.c.o CMakeFiles/myclient.dir/util.c.o CMakeFiles/myclient.dir/token.c.o CMakeFiles/myclient.dir/search.c.o CMakeFiles/myclient.dir/postings.c.o CMakeFiles/myclient.dir/database.c.o CMakeFiles/myclient.dir/wikiload.c.o  -o myclient -lm -lexpat -lsqlite3 

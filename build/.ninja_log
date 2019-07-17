@@ -1,0 +1,11 @@
+# ninja log v5
+8	325	0	CMakeFiles/myclient.dir/util.c.o	19881e48a79d431f
+3	334	0	CMakeFiles/myclient.dir/wiser.c.o	aec923132b3adb1e
+0	347	0	CMakeFiles/myclient.dir/myclient.c.o	13a7e8dfa0a87ddd
+10	361	0	CMakeFiles/myclient.dir/token.c.o	d9ff9e520a255d6d
+347	652	0	CMakeFiles/myclient.dir/database.c.o	2bbe33cc19671042
+361	755	0	CMakeFiles/myclient.dir/wikiload.c.o	ae47317d5dde9ca5
+0	271	0	CMakeFiles/myclient.dir/myclient.c.o	13a7e8dfa0a87ddd
+8	275	0	CMakeFiles/myclient.dir/util.c.o	19881e48a79d431f
+7	384	0	CMakeFiles/myclient.dir/wiser.c.o	aec923132b3adb1e
+9	467	0	CMakeFiles/myclient.dir/token.c.o	d9ff9e520a255d6d
