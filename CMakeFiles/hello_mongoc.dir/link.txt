@@ -1,0 +1,1 @@
+/usr/bin/gcc -g  -rdynamic CMakeFiles/hello_mongoc.dir/mongodatabase.c.o  -o hello_mongoc -Wl,-rpath,/usr/local/lib /usr/local/lib/libmongoc-1.0.so /usr/local/lib/libbson-1.0.so -lssl -lcrypto -lrt -lresolv -lsnappy -licuuc 

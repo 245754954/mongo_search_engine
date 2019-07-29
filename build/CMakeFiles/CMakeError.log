@@ -1,0 +1,11 @@
+Detecting C [-std=c11] compiler features failed to compile with the following output:
+Change Dir: /home/ftpuser/wiser/wiser/wiser/trunk/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/ninja" "cmTC_50200"
+[1/2] Building C object CMakeFiles/cmTC_50200.dir/feature_tests.c.o
+FAILED: /usr/bin/c99-gcc   -std=c11 -o CMakeFiles/cmTC_50200.dir/feature_tests.c.o   -c /home/ftpuser/wiser/wiser/wiser/trunk/build/CMakeFiles/feature_tests.c
+c99-gcc called with non ISO C99 option -std=c11
+ninja: build stopped: subcommand failed.
+
+
+

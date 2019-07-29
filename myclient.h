@@ -1,5 +1,6 @@
 #ifndef __MYCLIENT_H__
 #define __MYCLIENT_H__
+<<<<<<< HEAD
 
 #include "include/utlist.h"
 #include "include/uthash.h"
@@ -38,6 +39,13 @@ typedef enum {
 /* 应用程序的全局配置 */
 typedef struct _wiser_env {
 
+=======
+#include <mongoc/mongoc.h>
+#include "wiser.h"
+typedef struct
+{
+   
+>>>>>>> deea0c630d1bb382d028c89fea826bee052e293f
     mongoc_collection_t *documentcountcollections;
     mongoc_collection_t *tokencountcollections;
     mongoc_collection_t *settings;
@@ -46,6 +54,7 @@ typedef struct _wiser_env {
 
     mongoc_client_t *client;
     mongoc_database_t *database;
+<<<<<<< HEAD
     
             /* 数据库的路径*/
   
@@ -79,5 +88,25 @@ typedef struct
 #define DEFAULT_II_BUFFER_UPDATE_THRESHOLD 2048
 
 void query_reply(char *term,search_results1 *result);
+=======
+
+    int token_len;            /* 词元的长度。N-gram中N的取值 */
+    compress_method compress; /* 压缩倒排列表等数据的方法 */
+    int enable_phrase_search; /* 是否进行短语检索 */
+
+    inverted_index_hash *ii_buffer; /* 用于更新倒排索引的缓冲区（Buffer） */
+    int ii_buffer_count;            /* 用于更新倒排索引的缓冲区中的文档数 */
+    int ii_buffer_update_threshold; /* 缓冲区中文档数的阈值 */
+    int indexed_count;              /* 建立了索引的文档数 */
+
+} client_env;
+
+void query1(char *term);
+
+
+int init_env2(client_env *env,int ii_buffer_update_threshold, int enable_phrase_search,const char *db_path);
+
+void fin_env2(client_env *env);
+>>>>>>> deea0c630d1bb382d028c89fea826bee052e293f
 
 #endif

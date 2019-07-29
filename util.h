@@ -30,6 +30,9 @@ int utf8toutf32(const char *str, int str_size, UTF32Char **ustr,
                 int *ustr_len);
 void print_time_diff(void);
 
+<<<<<<< HEAD
 int base64_encode(const char *indata, int inlen, char *outdata, int *outlen);
     int base64_decode(const char *indata, int inlen, char *outdata, int *outlen);
+=======
+>>>>>>> deea0c630d1bb382d028c89fea826bee052e293f
 #endif /* __UTIL_H__ */

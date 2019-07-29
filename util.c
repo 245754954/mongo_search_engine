@@ -340,6 +340,7 @@ print_time_diff(void)
   }
   pre_time = current_time;
 }
+<<<<<<< HEAD
 
 
 
@@ -473,3 +474,5 @@ int base64_decode(const char *indata, int inlen, char *outdata, int *outlen) {
     }
     return ret;
 }
+=======
+>>>>>>> deea0c630d1bb382d028c89fea826bee052e293f

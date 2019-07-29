@@ -111,6 +111,7 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+<<<<<<< HEAD
 # Target rules for targets named mysqltest
 
 # Build rule for target.
@@ -149,6 +150,46 @@ encrypt.s: encrypt.c.s
 encrypt.c.s:
 	$(MAKE) -f CMakeFiles/mysqltest.dir/build.make CMakeFiles/mysqltest.dir/encrypt.c.s
 .PHONY : encrypt.c.s
+=======
+# Target rules for targets named test
+
+# Build rule for target.
+test: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 test
+.PHONY : test
+
+# fast build rule for target.
+test/fast:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/build
+.PHONY : test/fast
+
+database.o: database.c.o
+
+.PHONY : database.o
+
+# target to build an object file
+database.c.o:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/database.c.o
+.PHONY : database.c.o
+
+database.i: database.c.i
+
+.PHONY : database.i
+
+# target to preprocess a source file
+database.c.i:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/database.c.i
+.PHONY : database.c.i
+
+database.s: database.c.s
+
+.PHONY : database.s
+
+# target to generate assembly for a file
+database.c.s:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/database.c.s
+.PHONY : database.c.s
+>>>>>>> deea0c630d1bb382d028c89fea826bee052e293f
 
 mongodatabase.o: mongodatabase.c.o
 
@@ -156,7 +197,11 @@ mongodatabase.o: mongodatabase.c.o
 
 # target to build an object file
 mongodatabase.c.o:
+<<<<<<< HEAD
 	$(MAKE) -f CMakeFiles/mysqltest.dir/build.make CMakeFiles/mysqltest.dir/mongodatabase.c.o
+=======
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/mongodatabase.c.o
+>>>>>>> deea0c630d1bb382d028c89fea826bee052e293f
 .PHONY : mongodatabase.c.o
 
 mongodatabase.i: mongodatabase.c.i
@@ -165,7 +210,11 @@ mongodatabase.i: mongodatabase.c.i
 
 # target to preprocess a source file
 mongodatabase.c.i:
+<<<<<<< HEAD
 	$(MAKE) -f CMakeFiles/mysqltest.dir/build.make CMakeFiles/mysqltest.dir/mongodatabase.c.i
+=======
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/mongodatabase.c.i
+>>>>>>> deea0c630d1bb382d028c89fea826bee052e293f
 .PHONY : mongodatabase.c.i
 
 mongodatabase.s: mongodatabase.c.s
@@ -174,6 +223,7 @@ mongodatabase.s: mongodatabase.c.s
 
 # target to generate assembly for a file
 mongodatabase.c.s:
+<<<<<<< HEAD
 	$(MAKE) -f CMakeFiles/mysqltest.dir/build.make CMakeFiles/mysqltest.dir/mongodatabase.c.s
 .PHONY : mongodatabase.c.s
 
@@ -203,6 +253,37 @@ mysqldatabase.s: mysqldatabase.c.s
 mysqldatabase.c.s:
 	$(MAKE) -f CMakeFiles/mysqltest.dir/build.make CMakeFiles/mysqltest.dir/mysqldatabase.c.s
 .PHONY : mysqldatabase.c.s
+=======
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/mongodatabase.c.s
+.PHONY : mongodatabase.c.s
+
+myclient.o: myclient.c.o
+
+.PHONY : myclient.o
+
+# target to build an object file
+myclient.c.o:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/myclient.c.o
+.PHONY : myclient.c.o
+
+myclient.i: myclient.c.i
+
+.PHONY : myclient.i
+
+# target to preprocess a source file
+myclient.c.i:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/myclient.c.i
+.PHONY : myclient.c.i
+
+myclient.s: myclient.c.s
+
+.PHONY : myclient.s
+
+# target to generate assembly for a file
+myclient.c.s:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/myclient.c.s
+.PHONY : myclient.c.s
+>>>>>>> deea0c630d1bb382d028c89fea826bee052e293f
 
 postings.o: postings.c.o
 
@@ -210,7 +291,11 @@ postings.o: postings.c.o
 
 # target to build an object file
 postings.c.o:
+<<<<<<< HEAD
 	$(MAKE) -f CMakeFiles/mysqltest.dir/build.make CMakeFiles/mysqltest.dir/postings.c.o
+=======
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/postings.c.o
+>>>>>>> deea0c630d1bb382d028c89fea826bee052e293f
 .PHONY : postings.c.o
 
 postings.i: postings.c.i
@@ -219,7 +304,11 @@ postings.i: postings.c.i
 
 # target to preprocess a source file
 postings.c.i:
+<<<<<<< HEAD
 	$(MAKE) -f CMakeFiles/mysqltest.dir/build.make CMakeFiles/mysqltest.dir/postings.c.i
+=======
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/postings.c.i
+>>>>>>> deea0c630d1bb382d028c89fea826bee052e293f
 .PHONY : postings.c.i
 
 postings.s: postings.c.s
@@ -228,7 +317,11 @@ postings.s: postings.c.s
 
 # target to generate assembly for a file
 postings.c.s:
+<<<<<<< HEAD
 	$(MAKE) -f CMakeFiles/mysqltest.dir/build.make CMakeFiles/mysqltest.dir/postings.c.s
+=======
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/postings.c.s
+>>>>>>> deea0c630d1bb382d028c89fea826bee052e293f
 .PHONY : postings.c.s
 
 search.o: search.c.o
@@ -237,7 +330,11 @@ search.o: search.c.o
 
 # target to build an object file
 search.c.o:
+<<<<<<< HEAD
 	$(MAKE) -f CMakeFiles/mysqltest.dir/build.make CMakeFiles/mysqltest.dir/search.c.o
+=======
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/search.c.o
+>>>>>>> deea0c630d1bb382d028c89fea826bee052e293f
 .PHONY : search.c.o
 
 search.i: search.c.i
@@ -246,7 +343,11 @@ search.i: search.c.i
 
 # target to preprocess a source file
 search.c.i:
+<<<<<<< HEAD
 	$(MAKE) -f CMakeFiles/mysqltest.dir/build.make CMakeFiles/mysqltest.dir/search.c.i
+=======
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/search.c.i
+>>>>>>> deea0c630d1bb382d028c89fea826bee052e293f
 .PHONY : search.c.i
 
 search.s: search.c.s
@@ -255,7 +356,11 @@ search.s: search.c.s
 
 # target to generate assembly for a file
 search.c.s:
+<<<<<<< HEAD
 	$(MAKE) -f CMakeFiles/mysqltest.dir/build.make CMakeFiles/mysqltest.dir/search.c.s
+=======
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/search.c.s
+>>>>>>> deea0c630d1bb382d028c89fea826bee052e293f
 .PHONY : search.c.s
 
 testmongodatabase.o: testmongodatabase.c.o
@@ -264,7 +369,11 @@ testmongodatabase.o: testmongodatabase.c.o
 
 # target to build an object file
 testmongodatabase.c.o:
+<<<<<<< HEAD
 	$(MAKE) -f CMakeFiles/mysqltest.dir/build.make CMakeFiles/mysqltest.dir/testmongodatabase.c.o
+=======
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/testmongodatabase.c.o
+>>>>>>> deea0c630d1bb382d028c89fea826bee052e293f
 .PHONY : testmongodatabase.c.o
 
 testmongodatabase.i: testmongodatabase.c.i
@@ -273,7 +382,11 @@ testmongodatabase.i: testmongodatabase.c.i
 
 # target to preprocess a source file
 testmongodatabase.c.i:
+<<<<<<< HEAD
 	$(MAKE) -f CMakeFiles/mysqltest.dir/build.make CMakeFiles/mysqltest.dir/testmongodatabase.c.i
+=======
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/testmongodatabase.c.i
+>>>>>>> deea0c630d1bb382d028c89fea826bee052e293f
 .PHONY : testmongodatabase.c.i
 
 testmongodatabase.s: testmongodatabase.c.s
@@ -282,7 +395,11 @@ testmongodatabase.s: testmongodatabase.c.s
 
 # target to generate assembly for a file
 testmongodatabase.c.s:
+<<<<<<< HEAD
 	$(MAKE) -f CMakeFiles/mysqltest.dir/build.make CMakeFiles/mysqltest.dir/testmongodatabase.c.s
+=======
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/testmongodatabase.c.s
+>>>>>>> deea0c630d1bb382d028c89fea826bee052e293f
 .PHONY : testmongodatabase.c.s
 
 token.o: token.c.o
@@ -291,7 +408,11 @@ token.o: token.c.o
 
 # target to build an object file
 token.c.o:
+<<<<<<< HEAD
 	$(MAKE) -f CMakeFiles/mysqltest.dir/build.make CMakeFiles/mysqltest.dir/token.c.o
+=======
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/token.c.o
+>>>>>>> deea0c630d1bb382d028c89fea826bee052e293f
 .PHONY : token.c.o
 
 token.i: token.c.i
@@ -300,7 +421,11 @@ token.i: token.c.i
 
 # target to preprocess a source file
 token.c.i:
+<<<<<<< HEAD
 	$(MAKE) -f CMakeFiles/mysqltest.dir/build.make CMakeFiles/mysqltest.dir/token.c.i
+=======
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/token.c.i
+>>>>>>> deea0c630d1bb382d028c89fea826bee052e293f
 .PHONY : token.c.i
 
 token.s: token.c.s
@@ -309,7 +434,11 @@ token.s: token.c.s
 
 # target to generate assembly for a file
 token.c.s:
+<<<<<<< HEAD
 	$(MAKE) -f CMakeFiles/mysqltest.dir/build.make CMakeFiles/mysqltest.dir/token.c.s
+=======
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/token.c.s
+>>>>>>> deea0c630d1bb382d028c89fea826bee052e293f
 .PHONY : token.c.s
 
 util.o: util.c.o
@@ -318,7 +447,11 @@ util.o: util.c.o
 
 # target to build an object file
 util.c.o:
+<<<<<<< HEAD
 	$(MAKE) -f CMakeFiles/mysqltest.dir/build.make CMakeFiles/mysqltest.dir/util.c.o
+=======
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/util.c.o
+>>>>>>> deea0c630d1bb382d028c89fea826bee052e293f
 .PHONY : util.c.o
 
 util.i: util.c.i
@@ -327,7 +460,11 @@ util.i: util.c.i
 
 # target to preprocess a source file
 util.c.i:
+<<<<<<< HEAD
 	$(MAKE) -f CMakeFiles/mysqltest.dir/build.make CMakeFiles/mysqltest.dir/util.c.i
+=======
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/util.c.i
+>>>>>>> deea0c630d1bb382d028c89fea826bee052e293f
 .PHONY : util.c.i
 
 util.s: util.c.s
@@ -336,7 +473,11 @@ util.s: util.c.s
 
 # target to generate assembly for a file
 util.c.s:
+<<<<<<< HEAD
 	$(MAKE) -f CMakeFiles/mysqltest.dir/build.make CMakeFiles/mysqltest.dir/util.c.s
+=======
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/util.c.s
+>>>>>>> deea0c630d1bb382d028c89fea826bee052e293f
 .PHONY : util.c.s
 
 wikiload.o: wikiload.c.o
@@ -345,7 +486,11 @@ wikiload.o: wikiload.c.o
 
 # target to build an object file
 wikiload.c.o:
+<<<<<<< HEAD
 	$(MAKE) -f CMakeFiles/mysqltest.dir/build.make CMakeFiles/mysqltest.dir/wikiload.c.o
+=======
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/wikiload.c.o
+>>>>>>> deea0c630d1bb382d028c89fea826bee052e293f
 .PHONY : wikiload.c.o
 
 wikiload.i: wikiload.c.i
@@ -354,7 +499,11 @@ wikiload.i: wikiload.c.i
 
 # target to preprocess a source file
 wikiload.c.i:
+<<<<<<< HEAD
 	$(MAKE) -f CMakeFiles/mysqltest.dir/build.make CMakeFiles/mysqltest.dir/wikiload.c.i
+=======
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/wikiload.c.i
+>>>>>>> deea0c630d1bb382d028c89fea826bee052e293f
 .PHONY : wikiload.c.i
 
 wikiload.s: wikiload.c.s
@@ -363,7 +512,11 @@ wikiload.s: wikiload.c.s
 
 # target to generate assembly for a file
 wikiload.c.s:
+<<<<<<< HEAD
 	$(MAKE) -f CMakeFiles/mysqltest.dir/build.make CMakeFiles/mysqltest.dir/wikiload.c.s
+=======
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/wikiload.c.s
+>>>>>>> deea0c630d1bb382d028c89fea826bee052e293f
 .PHONY : wikiload.c.s
 
 wiser.o: wiser.c.o
@@ -372,7 +525,11 @@ wiser.o: wiser.c.o
 
 # target to build an object file
 wiser.c.o:
+<<<<<<< HEAD
 	$(MAKE) -f CMakeFiles/mysqltest.dir/build.make CMakeFiles/mysqltest.dir/wiser.c.o
+=======
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/wiser.c.o
+>>>>>>> deea0c630d1bb382d028c89fea826bee052e293f
 .PHONY : wiser.c.o
 
 wiser.i: wiser.c.i
@@ -381,7 +538,11 @@ wiser.i: wiser.c.i
 
 # target to preprocess a source file
 wiser.c.i:
+<<<<<<< HEAD
 	$(MAKE) -f CMakeFiles/mysqltest.dir/build.make CMakeFiles/mysqltest.dir/wiser.c.i
+=======
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/wiser.c.i
+>>>>>>> deea0c630d1bb382d028c89fea826bee052e293f
 .PHONY : wiser.c.i
 
 wiser.s: wiser.c.s
@@ -390,7 +551,11 @@ wiser.s: wiser.c.s
 
 # target to generate assembly for a file
 wiser.c.s:
+<<<<<<< HEAD
 	$(MAKE) -f CMakeFiles/mysqltest.dir/build.make CMakeFiles/mysqltest.dir/wiser.c.s
+=======
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/wiser.c.s
+>>>>>>> deea0c630d1bb382d028c89fea826bee052e293f
 .PHONY : wiser.c.s
 
 # Help Target
@@ -400,6 +565,7 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... rebuild_cache"
+<<<<<<< HEAD
 	@echo "... mysqltest"
 	@echo "... edit_cache"
 	@echo "... encrypt.o"
@@ -411,6 +577,19 @@ help:
 	@echo "... mysqldatabase.o"
 	@echo "... mysqldatabase.i"
 	@echo "... mysqldatabase.s"
+=======
+	@echo "... test"
+	@echo "... edit_cache"
+	@echo "... database.o"
+	@echo "... database.i"
+	@echo "... database.s"
+	@echo "... mongodatabase.o"
+	@echo "... mongodatabase.i"
+	@echo "... mongodatabase.s"
+	@echo "... myclient.o"
+	@echo "... myclient.i"
+	@echo "... myclient.s"
+>>>>>>> deea0c630d1bb382d028c89fea826bee052e293f
 	@echo "... postings.o"
 	@echo "... postings.i"
 	@echo "... postings.s"

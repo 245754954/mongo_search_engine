@@ -6,8 +6,15 @@
 #include "token.h"
 #include "search.h"
 #include "postings.h"
+<<<<<<< HEAD
 #include "wikiload.h"
 
+=======
+#include "database.h"
+#include "wikiload.h"
+
+
+>>>>>>> deea0c630d1bb382d028c89fea826bee052e293f
 /* 判断从地址t开始的、长度为l的二进制序列是否与字符串c一致 */
 #define MEMSTRCMP(t, l, c) (l == (sizeof(c) - 1) && !memcmp(t, c, l))
 /**
@@ -19,20 +26,32 @@
 static void
 add_document(wiser_env *env, const char *title, const char *body)
 {
+<<<<<<< HEAD
 
   if (title && body)
   {
     UTF32Char *body32;
     int body32_len;
     int64_t document_id;
+=======
+  if (title && body)
+  {
+    UTF32Char *body32;
+    int body32_len, document_id;
+>>>>>>> deea0c630d1bb382d028c89fea826bee052e293f
     unsigned int title_size, body_size;
 
     title_size = strlen(title);
     body_size = strlen(body);
 
     /* 将文档存储到数据库中并获取该文档对应的文档编号 */
+<<<<<<< HEAD
     //document_id = db_add_document2(env, title, body);
     // db_get_document_id2(env, title, &document_id);
+=======
+    db_add_document(env, title, title_size, body, body_size);
+    document_id = db_get_document_id(env, title, title_size);
+>>>>>>> deea0c630d1bb382d028c89fea826bee052e293f
 
     /* 转换文档正文的字符编码 */
     if (!utf8toutf32(body, body_size, &body32, &body32_len))
@@ -46,18 +65,31 @@ add_document(wiser_env *env, const char *title, const char *body)
     env->indexed_count++;
     print_error("count:%d title: %s", env->indexed_count, title);
   }
+<<<<<<< HEAD
   /* 存储在缓冲区中的文档数量达到了指定的阈值时，更新存储器上的倒排索引 */
   if (env->ii_buffer && (env->ii_buffer_count >= env->ii_buffer_update_threshold || !title))
+=======
+
+  /* 存储在缓冲区中的文档数量达到了指定的阈值时，更新存储器上的倒排索引 */
+  if (env->ii_buffer &&
+      (env->ii_buffer_count > env->ii_buffer_update_threshold || !title))
+>>>>>>> deea0c630d1bb382d028c89fea826bee052e293f
   {
     inverted_index_hash *p;
 
     print_time_diff();
 
     /* 更新所有词元对应的倒排项 */
+<<<<<<< HEAD
     for (p = env->ii_buffer; p != NULL; p = (inverted_index_hash *)p->hh.next)
     {
 
       //update_postings(env, p);
+=======
+    for (p = env->ii_buffer; p != NULL; p = p->hh.next)
+    {
+      update_postings(env, p);
+>>>>>>> deea0c630d1bb382d028c89fea826bee052e293f
     }
     free_inverted_index(env->ii_buffer);
     print_error("index flushed.");
@@ -84,7 +116,11 @@ init_env(wiser_env *env,
 {
   int rc;
   memset(env, 0, sizeof(wiser_env));
+<<<<<<< HEAD
   rc = init_database2(env, db_path);
+=======
+  rc = init_database(env, db_path);
+>>>>>>> deea0c630d1bb382d028c89fea826bee052e293f
   if (!rc)
   {
     env->token_len = N_GRAM;
@@ -101,9 +137,16 @@ init_env(wiser_env *env,
 static void
 fin_env(wiser_env *env)
 {
+<<<<<<< HEAD
   fin_database2(env);
 }
 
+=======
+  fin_database(env);
+}
+
+
+>>>>>>> deea0c630d1bb382d028c89fea826bee052e293f
 /**
  * 进行全文检索
  * @param[in] env 存储着应用程序运行环境的结构体
@@ -118,7 +161,10 @@ parse_compress_method(wiser_env *env, const char *method,
   {
     method_size = strlen(method);
   }
+<<<<<<< HEAD
 
+=======
+>>>>>>> deea0c630d1bb382d028c89fea826bee052e293f
   if (!method || !method_size || MEMSTRCMP(method, method_size, "golomb"))
   {
     env->compress = compress_golomb;
@@ -136,11 +182,22 @@ parse_compress_method(wiser_env *env, const char *method,
   switch (env->compress)
   {
   case compress_none:
+<<<<<<< HEAD
     db_replace_settings2(env, "compress_method", "none");
 
     break;
   case compress_golomb:
     db_replace_settings2(env, "compress_method", "golomb");
+=======
+    db_replace_settings(env,
+                        "compress_method", sizeof("compress_method") - 1,
+                        "none", sizeof("none") - 1);
+    break;
+  case compress_golomb:
+    db_replace_settings(env,
+                        "compress_method", sizeof("compress_method") - 1,
+                        "golomb", sizeof("golomb") - 1);
+>>>>>>> deea0c630d1bb382d028c89fea826bee052e293f
     break;
   }
 }
@@ -150,17 +207,31 @@ parse_compress_method(wiser_env *env, const char *method,
  * @param[in] argc 参数的个数
  * @param[in] argv 参数指针的数组
  */
+<<<<<<< HEAD
 /*
+=======
+
+
+>>>>>>> deea0c630d1bb382d028c89fea826bee052e293f
 int main(int argc, char *argv[])
 {
   wiser_env env;
   extern int optind;
+<<<<<<< HEAD
   int max_index_count = -1;                                            // 不限制参与索引构建的文档数量 /
   int ii_buffer_update_threshold = DEFAULT_II_BUFFER_UPDATE_THRESHOLD; //2048
   int enable_phrase_search = TRUE;
   const char *compress_method_str = NULL, *wikipedia_dump_file = NULL,
              *query = NULL;
   // 解析参数字符串
+=======
+  int max_index_count = -1; // 不限制参与索引构建的文档数量 /
+  int ii_buffer_update_threshold = DEFAULT_II_BUFFER_UPDATE_THRESHOLD;
+  int enable_phrase_search = TRUE;
+  const char *compress_method_str = NULL, *wikipedia_dump_file = NULL,
+             *query = NULL;
+  // 解析参数字符串 
+>>>>>>> deea0c630d1bb382d028c89fea826bee052e293f
   {
     int ch;
     extern int opterr;
@@ -191,8 +262,13 @@ int main(int argc, char *argv[])
       }
     }
   }
+<<<<<<< HEAD
  
   //使用解析过的参数运行wiser
+=======
+
+  //使用解析过的参数运行wiser 
+>>>>>>> deea0c630d1bb382d028c89fea826bee052e293f
   if (argc != optind + 1)
   {
     printf(
@@ -213,7 +289,11 @@ int main(int argc, char *argv[])
     return -1;
   }
 
+<<<<<<< HEAD
   //在构建索引时，若指定的数据库已存在则报错
+=======
+  //在构建索引时，若指定的数据库已存在则报错 
+>>>>>>> deea0c630d1bb382d028c89fea826bee052e293f
   {
     struct stat st;
     if (wikipedia_dump_file && !stat(argv[optind], &st))
@@ -224,9 +304,14 @@ int main(int argc, char *argv[])
   }
 
   {
+<<<<<<< HEAD
     const char *dbpath = "mongodb://localhost:27017";
     int rc = init_env(&env, ii_buffer_update_threshold, enable_phrase_search,
                       dbpath);
+=======
+    int rc = init_env(&env, ii_buffer_update_threshold, enable_phrase_search,
+                      argv[optind]);
+>>>>>>> deea0c630d1bb382d028c89fea826bee052e293f
     if (!rc)
     {
       print_time_diff();
@@ -234,6 +319,7 @@ int main(int argc, char *argv[])
       // 加载Wikipedia的词条数据
       if (wikipedia_dump_file)
       {
+<<<<<<< HEAD
          parse_compress_method(&env, compress_method_str, -1);
       //   //begin(&env);
         if (!load_wikipedia_dump(&env, wikipedia_dump_file, add_document,
@@ -264,6 +350,33 @@ int main(int argc, char *argv[])
         parse_compress_method(&env, cm, strlen(cm));
         env.indexed_count = db_get_document_count2(&env);
 
+=======
+        parse_compress_method(&env, compress_method_str, -1);
+        begin(&env);
+        if (!load_wikipedia_dump(&env, wikipedia_dump_file, add_document,
+                                 max_index_count))
+        {
+          // 清空缓冲区 
+          add_document(&env, NULL, NULL);
+          commit(&env);
+        }
+        else
+        {
+          rollback(&env);
+        }
+      }
+
+      // 进行检索 
+      if (query)
+      {
+        int cm_size;
+        const char *cm;
+        db_get_settings(&env,
+                        "compress_method", sizeof("compress_method") - 1,
+                        &cm, &cm_size);
+        parse_compress_method(&env, cm, cm_size);
+        env.indexed_count = db_get_document_count(&env);
+>>>>>>> deea0c630d1bb382d028c89fea826bee052e293f
         search(&env, query);
       }
       fin_env(&env);
@@ -273,4 +386,7 @@ int main(int argc, char *argv[])
     return rc;
   }
 }
+<<<<<<< HEAD
 */
+=======
+>>>>>>> deea0c630d1bb382d028c89fea826bee052e293f

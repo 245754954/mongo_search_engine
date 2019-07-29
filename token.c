@@ -1,8 +1,14 @@
 #include "util.h"
 #include "token.h"
 #include "postings.h"
+<<<<<<< HEAD
 #include <stdio.h>
 #include "encrypt.h"
+=======
+#include "database.h"
+
+#include <stdio.h>
+>>>>>>> deea0c630d1bb382d028c89fea826bee052e293f
 
 /**
  * 检查输入的字符（UTF-32）是否不属于索引对象
@@ -14,6 +20,7 @@
 static int
 wiser_is_ignored_char(const UTF32Char ustr)
 {
+<<<<<<< HEAD
   switch (ustr)
   {
   case ' ':
@@ -54,6 +61,16 @@ wiser_is_ignored_char(const UTF32Char ustr)
   case '|':
   case '}':
   case '~':
+=======
+  switch (ustr) {
+  case ' ': case '\f': case '\n': case '\r': case '\t': case '\v':
+  case '!': case '"': case '#': case '$': case '%': case '&':
+  case '\'': case '(': case ')': case '*': case '+': case ',':
+  case '-': case '.': case '/':
+  case ':': case ';': case '<': case '=': case '>': case '?': case '@':
+  case '[': case '\\': case ']': case '^': case '_': case '`':
+  case '{': case '|': case '}': case '~':
+>>>>>>> deea0c630d1bb382d028c89fea826bee052e293f
   case 0x3000: /* 全角空格 */
   case 0x3001: /* 、 */
   case 0x3002: /* 。 */
@@ -86,6 +103,7 @@ ngram_next(const UTF32Char *ustr, const UTF32Char *ustr_end,
   const UTF32Char *p;
 
   /* 读取时跳过文本开头的空格等字符 */
+<<<<<<< HEAD
   for (; ustr < ustr_end && wiser_is_ignored_char(*ustr); ustr++)
   {
   }
@@ -93,6 +111,14 @@ ngram_next(const UTF32Char *ustr, const UTF32Char *ustr_end,
   /* 不断取出最多包含n个字符的词元，直到遇到不属于索引对象的字符或到达了字符串的尾部 */
   for (i = 0, p = ustr; i < n && p < ustr_end && !wiser_is_ignored_char(*p); i++, p++)
   {
+=======
+  for (; ustr < ustr_end && wiser_is_ignored_char(*ustr); ustr++) {
+  }
+
+  /* 不断取出最多包含n个字符的词元，直到遇到不属于索引对象的字符或到达了字符串的尾部 */
+  for (i = 0, p = ustr; i < n && p < ustr_end
+       && !wiser_is_ignored_char(*p); i++, p++) {
+>>>>>>> deea0c630d1bb382d028c89fea826bee052e293f
   }
 
   *start = ustr;
@@ -110,9 +136,14 @@ create_new_inverted_index(int token_id, int docs_count)
 {
   inverted_index_value *ii_entry;
 
+<<<<<<< HEAD
   ii_entry = (inverted_index_value *)malloc(sizeof(inverted_index_value));
   if (!ii_entry)
   {
+=======
+  ii_entry = malloc(sizeof(inverted_index_value));
+  if (!ii_entry) {
+>>>>>>> deea0c630d1bb382d028c89fea826bee052e293f
     print_error("cannot allocate memory for an inverted index.");
     return NULL;
   }
@@ -135,8 +166,12 @@ create_new_postings_list(int document_id)
   postings_list *pl;
 
   pl = malloc(sizeof(postings_list));
+<<<<<<< HEAD
   if (!pl)
   {
+=======
+  if (!pl) {
+>>>>>>> deea0c630d1bb382d028c89fea826bee052e293f
     print_error("cannot allocate memory for a postings list.");
     return NULL;
   }
@@ -158,15 +193,25 @@ create_new_postings_list(int document_id)
  * @retval 0 成功
  * @retval -1 失败
  */
+<<<<<<< HEAD
 int token_to_postings_list(wiser_env *env,
                            const int document_id, const char *token,
                            const unsigned int token_size,
                            const int position,
                            inverted_index_hash **postings)
+=======
+int
+token_to_postings_list(wiser_env *env,
+                       const int document_id, const char *token,
+                       const unsigned int token_size,
+                       const int position,
+                       inverted_index_hash **postings)
+>>>>>>> deea0c630d1bb382d028c89fea826bee052e293f
 {
   postings_list *pl;
   inverted_index_value *ii_entry;
   int token_id, token_docs_count;
+<<<<<<< HEAD
  
   //char ciper_token[48]={'\0'};
   //md5_without_salt(&(env->ctx),(char *)token,ciper_token);
@@ -204,6 +249,27 @@ int token_to_postings_list(wiser_env *env,
     {
       return -1;
     }
+=======
+
+  token_id = db_get_token_id(
+               env, token, token_size, document_id, &token_docs_count);
+  if (*postings) {
+    HASH_FIND_INT(*postings, &token_id, ii_entry);
+  } else {
+    ii_entry = NULL;
+  }
+  if (ii_entry) {
+    pl = ii_entry->postings_list;
+    pl->positions_count++;
+  } else {
+    ii_entry = create_new_inverted_index(token_id,
+                                         document_id ? 1 : token_docs_count);
+    if (!ii_entry) { return -1; }
+    HASH_ADD_INT(*postings, token_id, ii_entry);
+
+    pl = create_new_postings_list(document_id);
+    if (!pl) { return -1; }
+>>>>>>> deea0c630d1bb382d028c89fea826bee052e293f
     LL_APPEND(ii_entry->postings_list, pl);
   }
   /* 存储位置信息 */
@@ -225,7 +291,15 @@ int token_to_postings_list(wiser_env *env,
  * @retval 0 成功
  * @retval -1 失败
  */
+<<<<<<< HEAD
 int text_to_postings_lists(wiser_env *env,const int document_id, const UTF32Char *text,const unsigned int text_len,const int n, inverted_index_hash **postings)
+=======
+int
+text_to_postings_lists(wiser_env *env,
+                       const int document_id, const UTF32Char *text,
+                       const unsigned int text_len,
+                       const int n, inverted_index_hash **postings)
+>>>>>>> deea0c630d1bb382d028c89fea826bee052e293f
 {
   /* FIXME: now same document update is broken. */
   int t_len, position = 0;
@@ -261,11 +335,21 @@ int text_to_postings_lists(wiser_env *env,const int document_id, const UTF32Char
  * @param[in] env 存储着应用程序运行环境的结构体
  * @param[in] token_id 词元编号
  */
+<<<<<<< HEAD
 void dump_token(wiser_env *env, int token_id)
 {
   int token_len;
   char *token;
 
   //db_get_token2(env, token_id, &token);
+=======
+void
+dump_token(wiser_env *env, int token_id)
+{
+  int token_len;
+  const char *token;
+
+  db_get_token(env, token_id, &token, &token_len);
+>>>>>>> deea0c630d1bb382d028c89fea826bee052e293f
   printf("token: %.*s (id: %d)\n", token_len, token, token_id);
 }

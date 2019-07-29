@@ -1,0 +1,5 @@
+  "-x",
+                "zhwiki-20190701-pages-articles-multistream1.xml",
+                "-m",
+                "20",
+                "zfc.db"

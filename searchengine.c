@@ -39,7 +39,10 @@
 #include <signal.h>
 #include <errno.h>
 #include "threadpool.h"
+<<<<<<< HEAD
 #include "myclient.h"
+=======
+>>>>>>> deea0c630d1bb382d028c89fea826bee052e293f
  
 #define DEFAULT_TIME 10                 /*10s检测一次*/
 #define MIN_WAIT_TASK_NUM 10            /*如果queue_size > MIN_WAIT_TASK_NUM 添加新的线程到线程池*/ 
@@ -124,9 +127,13 @@ void httpd_handler(struct evhttp_request *req, void *arg)
     else
     {
         printf("====line:%d,get request param: term=[%s]\n", __LINE__, term);
+<<<<<<< HEAD
         search_results1 *results=NULL;
         query_reply(term,results);
         
+=======
+        query1(term);
+>>>>>>> deea0c630d1bb382d028c89fea826bee052e293f
     }
 
     /*
@@ -151,7 +158,10 @@ void httpd_handler(struct evhttp_request *req, void *arg)
 
     evbuffer_add_printf(buf, "Receive get request,Thamks for the request! the received trem is \n%s\n", term);
     evhttp_send_reply(req, HTTP_OK, "OK", buf);
+<<<<<<< HEAD
 
+=======
+>>>>>>> deea0c630d1bb382d028c89fea826bee052e293f
     evbuffer_free(buf);
 }
 

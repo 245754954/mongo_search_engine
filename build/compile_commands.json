@@ -1,0 +1,55 @@
+[
+{
+  "directory": "/home/ftpuser/wiser/wiser/wiser/trunk/build",
+  "command": "/usr/bin/c99-gcc   -g   -std=c++11 -o CMakeFiles/searchengine.dir/searchengine.c.o   -c /home/ftpuser/wiser/wiser/wiser/trunk/searchengine.c",
+  "file": "/home/ftpuser/wiser/wiser/wiser/trunk/searchengine.c"
+},
+
+{
+  "directory": "/home/ftpuser/wiser/wiser/wiser/trunk/build",
+  "command": "/usr/bin/c99-gcc   -g   -std=c++11 -o CMakeFiles/searchengine.dir/myclient.c.o   -c /home/ftpuser/wiser/wiser/wiser/trunk/myclient.c",
+  "file": "/home/ftpuser/wiser/wiser/wiser/trunk/myclient.c"
+},
+
+{
+  "directory": "/home/ftpuser/wiser/wiser/wiser/trunk/build",
+  "command": "/usr/bin/c99-gcc   -g   -std=c++11 -o CMakeFiles/searchengine.dir/wiser.c.o   -c /home/ftpuser/wiser/wiser/wiser/trunk/wiser.c",
+  "file": "/home/ftpuser/wiser/wiser/wiser/trunk/wiser.c"
+},
+
+{
+  "directory": "/home/ftpuser/wiser/wiser/wiser/trunk/build",
+  "command": "/usr/bin/c99-gcc   -g   -std=c++11 -o CMakeFiles/searchengine.dir/util.c.o   -c /home/ftpuser/wiser/wiser/wiser/trunk/util.c",
+  "file": "/home/ftpuser/wiser/wiser/wiser/trunk/util.c"
+},
+
+{
+  "directory": "/home/ftpuser/wiser/wiser/wiser/trunk/build",
+  "command": "/usr/bin/c99-gcc   -g   -std=c++11 -o CMakeFiles/searchengine.dir/token.c.o   -c /home/ftpuser/wiser/wiser/wiser/trunk/token.c",
+  "file": "/home/ftpuser/wiser/wiser/wiser/trunk/token.c"
+},
+
+{
+  "directory": "/home/ftpuser/wiser/wiser/wiser/trunk/build",
+  "command": "/usr/bin/c99-gcc   -g   -std=c++11 -o CMakeFiles/searchengine.dir/search.c.o   -c /home/ftpuser/wiser/wiser/wiser/trunk/search.c",
+  "file": "/home/ftpuser/wiser/wiser/wiser/trunk/search.c"
+},
+
+{
+  "directory": "/home/ftpuser/wiser/wiser/wiser/trunk/build",
+  "command": "/usr/bin/c99-gcc   -g   -std=c++11 -o CMakeFiles/searchengine.dir/postings.c.o   -c /home/ftpuser/wiser/wiser/wiser/trunk/postings.c",
+  "file": "/home/ftpuser/wiser/wiser/wiser/trunk/postings.c"
+},
+
+{
+  "directory": "/home/ftpuser/wiser/wiser/wiser/trunk/build",
+  "command": "/usr/bin/c99-gcc   -g   -std=c++11 -o CMakeFiles/searchengine.dir/database.c.o   -c /home/ftpuser/wiser/wiser/wiser/trunk/database.c",
+  "file": "/home/ftpuser/wiser/wiser/wiser/trunk/database.c"
+},
+
+{
+  "directory": "/home/ftpuser/wiser/wiser/wiser/trunk/build",
+  "command": "/usr/bin/c99-gcc   -g   -std=c++11 -o CMakeFiles/searchengine.dir/wikiload.c.o   -c /home/ftpuser/wiser/wiser/wiser/trunk/wikiload.c",
+  "file": "/home/ftpuser/wiser/wiser/wiser/trunk/wikiload.c"
+}
+]

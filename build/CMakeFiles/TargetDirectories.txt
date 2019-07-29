@@ -1,0 +1,3 @@
+/home/ftpuser/wiser/wiser/wiser/trunk/build/CMakeFiles/rebuild_cache.dir
+/home/ftpuser/wiser/wiser/wiser/trunk/build/CMakeFiles/searchengine.dir
+/home/ftpuser/wiser/wiser/wiser/trunk/build/CMakeFiles/edit_cache.dir
